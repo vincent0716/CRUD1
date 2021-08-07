@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:background="#D3EFF5"
+        android:orientation="vertical"
+     >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:textColor="#FFFFFF"
+                        android:background="#00A2E8"
+                        android:textSize="15dp"
+                        android:paddingHorizontal="5dp"
+                        android:id="@+id/task_status"></TextView>
+                </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_task1"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_alignParentStart="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Task:"
+                android:textColor="#000000"></TextView>
+
+            <TextView
+                    android:id="@+id/task_name_add1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"
+                    android:paddingLeft="3dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/txt_task1"></TextView>
+
+                <TextView
+                    android:id="@+id/txt_date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_name_add1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+
+                    android:text="Task Date:"></TextView>
+
+                <TextView
+                    android:id="@+id/task_name_date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_name_add1"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#000000"
+                    android:paddingLeft="3dp"
+                    android:inputType="date"
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_toEndOf="@id/txt_date1"></TextView>
+
+                <TextView
+                    android:id="@+id/txt_developer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_name_date1"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:text="Developer:"></TextView>
+
+                <TextView
+                    android:id="@+id/task_name_developer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_name_date1"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="3dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_toEndOf="@id/txt_developer1"></TextView>
+
+                <TextView
+                    android:id="@+id/txt_position1"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_name_developer1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:layout_marginRight="10dp"
+                    android:text="Position:"></TextView>
+
+                <TextView
+                    android:id="@+id/task_name_position1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="3dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/task_name_developer1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/txt_position1"></TextView>
+            </RelativeLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:id="@+id/btn_UpdateTask"
+            android:layout_gravity="end"
+            android:background="@color/colorAccent"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="20dp"
+            android:layout_marginRight="10dp"></Button>
+
+    </LinearLayout>
+
+</LinearLayout>

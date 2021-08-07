@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity2">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            app:popupTheme="@style/Theme.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:text="My Task Management"
+                android:textSize="20dp"></TextView>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="?actionBarSize"
+
+        android:orientation="vertical"
+        android:background="#D3EFF5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add New Task"
+                    android:textSize="15dp"
+                    android:textColor="#FFFFFF"
+                    android:background="#00A2E8"></TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_task"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_alignParentStart="true"
+                android:textColor="#000000"
+                android:text="Task"></TextView>
+
+            <EditText
+                android:id="@+id/task_name_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
+                android:layout_below="@id/title"
+                android:layout_alignParentEnd="true"
+               android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/txt_task"></EditText>
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_name_add"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="false"
+                android:textColor="#000000"
+
+                android:layout_marginTop="10dp"
+                android:text="Task Date"></TextView>
+
+            <EditText
+                android:id="@+id/task_name_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@+id/task_name_add"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/txt_date"
+                android:inputType="date"></EditText>
+
+            <TextView
+                android:id="@+id/txt_developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_name_date"
+                android:layout_alignParentStart="true"
+                android:textColor="#000000"
+                android:layout_alignParentRight="false"
+                android:layout_marginTop="10dp"
+                android:text="Developer"></TextView>
+
+            <EditText
+                android:id="@+id/task_name_developer"
+                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/task_name_date"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/txt_developer"></EditText>
+
+            <TextView
+                android:id="@+id/txt_position"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_name_developer"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="false"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:text="Position"></TextView>
+
+            <EditText
+                android:id="@+id/task_name_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_name_developer"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="20dp"
+
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/txt_position"
+                android:background="#FFFFFF"
+                android:textColor="#000000"></EditText>
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_insertTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@color/colorAccent"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="20dp"
+            android:layout_marginRight="10dp"
+            android:text="Save"></Button>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
