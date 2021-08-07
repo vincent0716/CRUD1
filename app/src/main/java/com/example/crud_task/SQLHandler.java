@@ -23,6 +23,7 @@ public class SQLHandler extends SQLiteOpenHelper {
     public SQLHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context=context;
+
     }
 
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -57,4 +58,10 @@ public class SQLHandler extends SQLiteOpenHelper {
         }
 
     }
+        public void deleteTask(String id){
+            SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+            sqLiteDatabase.delete(table_name,task_id+"=?",new String[]{id});
+            sqLiteDatabase.close();
+            Toast.makeText(context,"Deleted successfully",Toast.LENGTH_SHORT).show();
+        }
 }

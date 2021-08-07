@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new MyAdapter(MainActivity.this,getTask()));
+        recyclerView.setAdapter(new RecycleView_Adapter(MainActivity.this,getTask()));
         add_button=findViewById(R.id.btn_add);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor rs=database.rawQuery("Select * FROM myTask",null);
         while (rs.moveToNext()){
-
             name=rs.getString(rs.getColumnIndex("task_name"));
             date=rs.getString(rs.getColumnIndex("task_date"));
             developer=rs.getString(rs.getColumnIndex("developer_name"));
@@ -76,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
             int w=Integer.parseInt(status);
             id=rs.getString(rs.getColumnIndex("task_id"));
             position=rs.getString(rs.getColumnIndex("position_name"));
-
-
             if(w==0){
                 stat="PENDING";
             }
@@ -92,81 +89,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //recycleview
-    private class MyAdapter extends RecyclerView.Adapter<MyAdapter.myViewHolder>{
-        Context context;
-        ArrayList<Task> arrayList=new ArrayList<>();
 
-        public MyAdapter(Context context,ArrayList<Task> arrayList) {
-           this.context=context;
-          this.arrayList=arrayList;
-        }
-
-        @NonNull
-        @Override
-        public MyAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater inflater=LayoutInflater.from(context);
-            View view=inflater.inflate(R.layout.list,parent,false);
-            return new myViewHolder(view);
-        }
-
-
-        @Override
-        public void onBindViewHolder(@NonNull final MyAdapter.myViewHolder holder, final int position1) {
-            name=arrayList.get(position1).getName();
-            date=arrayList.get(position1).getDate();
-            developer=arrayList.get(position1).getDeveloper();
-            position=arrayList.get(position1).getPosition();
-            status=arrayList.get(position1).getStatus();
-            id=arrayList.get(position1).getId();
-
-            holder.textView.setText(name);
-            holder.textView1.setText(date);
-            holder.textView2.setText(developer);
-            holder.textView3.setText(position);
-            holder.textView4.setText(status);
-            if(status=="PENDING"){
-                holder.textView4.setTextColor(Color.parseColor("#C40E17"));
-                holder.textView4.setTypeface(holder.textView4.getTypeface(), Typeface.BOLD);
-            }
-            else{
-                holder.textView4.setTextColor(Color.parseColor("#FFFFFF"));
-                holder.textView4.setTypeface(holder.textView4.getTypeface(), Typeface.BOLD);
-            }
-
-            holder.button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    name1=arrayList.get(position1).getName();
-                    date1=arrayList.get(position1).getDate();
-                    developer1=arrayList.get(position1).getDeveloper();
-                    pos=arrayList.get(position1).getPosition();
-                    status1=arrayList.get(position1).getStatus();
-                    id1=arrayList.get(position1).getId();
-                    Intent intent=new Intent(MainActivity.this,Update.class);
-                    startActivity(intent);
-                }
-            });
-        }
-
-        @Override
-        public int getItemCount() {
-            return arrayList.size();
-        }
-
-        public class myViewHolder extends RecyclerView.ViewHolder  {
-            TextView textView,textView1,textView2,textView3,textView4;
-            Button button;
-            public myViewHolder(@NonNull View itemView) {
-                super(itemView);
-
-                textView=itemView.findViewById(R.id.task_name_add1);
-                textView1=itemView.findViewById(R.id.task_name_date1);
-                textView2=itemView.findViewById(R.id.task_name_developer1);
-                textView3=itemView.findViewById(R.id.task_name_position1);
-                textView4=itemView.findViewById(R.id.task_status);
-                button=itemView.findViewById(R.id.btn_UpdateTask);
-
-            }
-        }
-    }
 }
